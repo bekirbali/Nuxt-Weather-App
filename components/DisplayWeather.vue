@@ -146,12 +146,15 @@ export default {
     color: white;
 
     .days {
-      padding-right: 1rem;
+      padding: 1rem;
       display: flex;
       flex-direction: column;
       align-items: center;
       text-align: center;
       justify-content: center;
+      img {
+        width: 6rem;
+      }
       p {
         width: 8rem;
       }
@@ -183,7 +186,7 @@ export default {
     display: flex;
     align-items: center;
     padding-left: 1rem;
-    height: 15rem;
+    /* height: 15rem; */
     .main-details {
       display: flex;
       gap: 2rem;
@@ -239,6 +242,45 @@ export default {
       rgba(0, 0, 0, 0.315)
     );
     z-index: -1;
+  }
+}
+@media screen and (max-width: 1026px) {
+  .display-container {
+    width: 100vw;
+    height: auto;
+    justify-content: space-evenly;
+  }
+  .main-container {
+    height: auto;
+    .main-details {
+      width: 300px;
+      height: 400px;
+      flex-direction: column;
+      align-items: center;
+      justify-content: center;
+      gap: 0 !important;
+      text-align: center;
+      .degree {
+        p {
+          font-size: 3rem !important;
+        }
+      }
+      img {
+        width: 100px;
+        height: 100px;
+      }
+
+      .city-info {
+        .city {
+          font-size: 1rem;
+        }
+        .date {
+          p {
+            display: none;
+          }
+        }
+      }
+    }
   }
 }
 </style>
