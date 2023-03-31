@@ -79,7 +79,7 @@
         </div>
       </div>
     </div>
-    <div v-if="!this.weatherData.name" class="forecast">
+    <div v-if="!this.weatherData?.name" class="forecast">
       <div v-for="day in usersLocationWeatherForecast?.list" class="days">
         <p>
           {{
