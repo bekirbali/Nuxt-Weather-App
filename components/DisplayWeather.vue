@@ -1,6 +1,6 @@
 <template lang="">
   <div class="display-container">
-    <div v-if="!this.weatherData.name" class="main-container">
+    <div v-if="!this.weatherData?.name" class="main-container">
       <div class="main-details">
         <div class="degree">
           <p>{{ Math.round(this.usersLocationWeatherData?.main?.temp) }}°</p>
@@ -42,7 +42,7 @@
         </div>
       </div>
     </div>
-    <div v-if="this.weatherData.name" class="main-container">
+    <div v-if="this.weatherData?.name" class="main-container">
       <div class="main-details">
         <div class="degree">
           <p>{{ Math.round(this.weatherData?.main?.temp) }}°</p>
@@ -80,7 +80,7 @@
       </div>
     </div>
     <div v-if="!this.weatherData.name" class="forecast">
-      <div v-for="day in usersLocationWeatherForecast.list" class="days">
+      <div v-for="day in usersLocationWeatherForecast?.list" class="days">
         <p>
           {{
             new Date(day.dt * 1000).toLocaleDateString(en - US, {
@@ -90,16 +90,18 @@
           }}
         </p>
         <!-- <p>{{ day.dt_txt }}</p> -->
-        <img :src="`../icons/${day?.weather[0].icon}.svg`" alt="" />
+        <img :src="`../icons/${day?.weather?.[0]?.icon}.svg`" alt="" />
         <p>
           {{
-            day?.weather[0].description.replace(/\b\w/g, (c) => c.toUpperCase())
+            day?.weather?.[0]?.description.replace(/\b\w/g, (c) =>
+              c.toUpperCase()
+            )
           }}
         </p>
       </div>
     </div>
-    <div v-if="this.weatherData.name" class="forecast">
-      <div v-for="day in weatherForecast.list" class="days">
+    <div v-if="this.weatherData?.name" class="forecast">
+      <div v-for="day in weatherForecast?.list" class="days">
         <p>
           {{
             new Date(day.dt * 1000).toLocaleDateString(en - US, {
@@ -109,7 +111,7 @@
           }}
         </p>
         <!-- <p>{{ day.dt_txt }}</p> -->
-        <img :src="`../icons/${day?.weather[0].icon}.svg`" alt="" />
+        <img :src="`../icons/${day?.weather?.[0]?.icon}.svg`" alt="" />
         <p>
           {{
             day?.weather[0].description.replace(/\b\w/g, (c) => c.toUpperCase())
