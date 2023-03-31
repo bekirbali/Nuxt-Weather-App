@@ -19,8 +19,8 @@
           <button v-for="city in suggested" class="city-btn">{{ city }}</button>
         </ul>
       </div>
-      <div v-if="!this.weatherData.name" class="weather-details">
-        <h2>Weather Details of {{ this.usersLocationWeatherData.name }}</h2>
+      <div v-if="!this.weatherData?.name" class="weather-details">
+        <h2>Weather Details of {{ this.usersLocationWeatherData?.name }}</h2>
         <ul class="details">
           <li class="weather-description">
             <p class="name">Details</p>
@@ -47,8 +47,8 @@
           </li>
         </ul>
       </div>
-      <div v-if="this.weatherData.name" class="weather-details">
-        <h2>Weather Details of {{ this.weatherData.name }}</h2>
+      <div v-if="this.weatherData?.name" class="weather-details">
+        <h2>Weather Details of {{ this.weatherData?.name }}</h2>
         <ul class="details">
           <li class="weather-description">
             <p class="name">Details</p>
