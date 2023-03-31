@@ -122,7 +122,6 @@ export default {
 .main-container {
   display: flex;
   height: 100%;
-  width: 100%;
   .loading {
     flex: 3;
   }
@@ -140,6 +139,20 @@ export default {
   }
   .weather-box {
     width: 66%;
+  }
+}
+@media screen and (max-width: 1026px) {
+  .main-container {
+    flex-direction: column-reverse;
+    height: auto;
+    .weather-box {
+      width: 100vw;
+
+      .forecast {
+        padding: 0.5rem;
+        margin: 0;
+      }
+    }
   }
 }
 </style>
