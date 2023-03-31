@@ -43,9 +43,7 @@ export default {
         );
         this.weatherData = data;
         this.usersLocationWeatherData = [];
-        // console.log(this.weatherData, "weatherData");
       } catch (error) {
-        console.log(error);
       } finally {
         this.loading = false;
       }
@@ -55,9 +53,7 @@ export default {
         const { data } = await axios.get(
           `https://api.openweathermap.org/data/2.5/forecast/?q=${city}&units=metric&appid=${this.apiKey}`
         );
-        console.log(this.weatherForecast, "forecast");
         this.weatherForecast = data;
-        console.log(this.weatherForecast, "list");
       } catch (error) {
         console.log(error);
       } finally {
@@ -71,7 +67,6 @@ export default {
           `https://api.openweathermap.org/data/2.5/weather?lat=${latitude}&lon=${longitude}&units=metric&appid=${this.apiKey}`
         );
         this.usersLocationWeatherData = data;
-        console.log(this.usersLocationWeatherData, "mounted");
       } catch (error) {
         console.log(error);
       } finally {
@@ -85,7 +80,6 @@ export default {
           `https://api.openweathermap.org/data/2.5/forecast?lat=${latitude}&lon=${longitude}&units=metric&appid=${this.apiKey}`
         );
         this.usersLocationWeatherForecast = data;
-        console.log(this.usersLocationWeatherForecast, "forecast");
       } catch (error) {
         console.log(error);
       } finally {

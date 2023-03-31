@@ -105,7 +105,6 @@ export default {
           .includes(this.search.toLowerCase())
       ) {
         alert(`You are already seeing the weather of ${this.search}`);
-        console.log("hi");
         return;
       }
       if (
@@ -114,7 +113,6 @@ export default {
           .includes(this.search.toLowerCase())
       ) {
         alert(`You are already seeing the weather of ${this.search}`);
-        console.log("hi");
         return;
       }
       this.fetchData(this.search);
