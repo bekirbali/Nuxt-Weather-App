@@ -22,7 +22,7 @@
               {{
                 new Date(
                   this.usersLocationWeatherData?.dt * 1000
-                ).toLocaleDateString("en-US", {
+                ).toLocaleDateString("en-us", {
                   weekday: "long",
                 })
               }}
@@ -57,7 +57,7 @@
             <div class="day">
               {{
                 new Date(this.weatherData?.dt * 1000).toLocaleDateString(
-                  "en-US",
+                  "en-us",
                   {
                     weekday: "long",
                   }
@@ -83,7 +83,7 @@
       <div v-for="day in usersLocationWeatherForecast?.list" class="days">
         <p>
           {{
-            new Date(day.dt * 1000).toLocaleDateString(en - US, {
+            new Date(day.dt * 1000).toLocaleDateString("en-us", {
               weekday: "long",
               hour: "numeric",
             })
@@ -104,7 +104,7 @@
       <div v-for="day in weatherForecast?.list" class="days">
         <p>
           {{
-            new Date(day.dt * 1000).toLocaleDateString(en - US, {
+            new Date(day.dt * 1000).toLocaleDateString("en-us", {
               weekday: "long",
               hour: "numeric",
             })

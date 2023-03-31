@@ -99,6 +99,24 @@ export default {
     submitHandler(e) {
       e.preventDefault();
       if (!this.search) return;
+      if (
+        this.weatherData?.name
+          ?.toLowerCase()
+          .includes(this.search.toLowerCase())
+      ) {
+        alert(`You are already seeing the weather of ${this.search}`);
+        console.log("hi");
+        return;
+      }
+      if (
+        this.usersLocationWeatherData?.name
+          ?.toLowerCase()
+          .includes(this.search.toLowerCase())
+      ) {
+        alert(`You are already seeing the weather of ${this.search}`);
+        console.log("hi");
+        return;
+      }
       this.fetchData(this.search);
       this.fetchForecastData(this.search);
       this.suggested.pop();
